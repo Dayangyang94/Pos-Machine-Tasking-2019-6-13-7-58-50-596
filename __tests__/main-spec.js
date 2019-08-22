@@ -1,4 +1,4 @@
-const {counProducts,fetchProduct,generateReceiptItems,countTotalPrice,assemble} = require('../main');
+const {counProducts,fetchProduct,generateReceiptItems,countTotalPrice,assemble,generateReceipt} = require('../main');
 //countProducts方法测试
 // it ('should count codes', () => {
 //     //given
@@ -72,7 +72,7 @@ var totalPrice=countTotalPrice(countTotalPriceInput)
     console.log(totalPrice);
     //输出20
 });
-
+//结果打印测试
 it ('结果验证', () => {
     //集成
     var assemInput=[ 
@@ -81,6 +81,14 @@ it ('结果验证', () => {
     { name: 'Dr Pepper', price: 7, count: 1 } 
 ];
     var receipt=assemble(assemInput,20)
+    console.log(receipt);
+    //输出
+});
+
+it ('结果验证', () => {
+    //集成
+    var input=['0001', '0003', '0005', '0003'];
+    var receipt=generateReceipt(input);
     console.log(receipt);
     //输出
 });

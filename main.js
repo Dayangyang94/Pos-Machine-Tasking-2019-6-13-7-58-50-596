@@ -109,10 +109,18 @@ function assemble(receiptsArray,totalPrice){
    output+="----------------\n";
    output+="Price:"+totalPrice;
 }
+//
+function generateReceipt(codes){
+    let receiptsArray=generateReceiptItems(codes);
+    let totalPrice=countTotalPrice(receiptsArray);
+    let receipt=assemble(receiptsArray,totalPrice);
+    return receipt;
+}
 module.exports = {
     counProducts,
     fetchProduct,
     generateReceiptItems,
     countTotalPrice,
-    assemble
+    assemble,
+    generateReceipt
 };
